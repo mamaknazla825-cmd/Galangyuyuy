@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Untuk Iren ❤️</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Poppins", sans-serif;
+      color: white;
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at top left, #ff5f9e33, transparent 35%),
+        radial-gradient(circle at bottom right, #9b5cff33, transparent 35%),
+        linear-gradient(135deg, #090014, #18051f, #090014);
+    }
+
+    .stars {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .star {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: white;
+      opacity: .7;
+      animation: twinkle 2s infinite alternate;
+    }
+
+    @keyframes twinkle {
+      from {
+        opacity: .2;
+        transform: scale(.7);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1.3);
+      }
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+      width: min(92%, 700px);
+      margin: auto;
+      padding: 45px 0;
+    }
+
+    .card {
+      padding: 35px 25px;
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 28px;
+      background: rgba(255,255,255,.07);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      box-shadow: 0 25px 80px rgba(0,0,0,.4);
+      text-align: center;
+    }
+
+    .heart {
+      font-size: 55px;
+      animation: heartbeat 1.4s infinite;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% {
+        transform: scale(1);
+      }
+      25% {
+        transform: scale(1.15);
+      }
+      40% {
+        transform: scale(1);
+      }
+      60% {
+        transform: scale(1.15);
+      }
+    }
+
+    h1 {
+      margin: 10px 0;
+      font-family: "Great Vibes", cursive;
+      font-size: clamp(55px, 15vw, 90px);
+      font-weight: 400;
+      color: #ff9fc8;
+      text-shadow: 0 0 25px #ff4f9a66;
+    }
+
+    .subtitle {
+      color: #ddd;
+      line-height: 1.8;
+      font-size: 14px;
+      margin-bottom: 30px;
+    }
+
+    .question {
+      font-size: 22px;
+      font-weight: 600;
+      line-height: 1.5;
+      margin: 25px 0 8px;
+    }
+
+    .small-text {
+      min-height: 45px;
+      color: #ffc5dd;
+      font-size: 13px;
+      line-height: 1.6;
+      transition: .3s;
+    }
+
+    .buttons {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      min-height: 100px;
+      margin-top: 25px;
+    }
+
+    button {
+      border: none;
+      border-radius: 999px;
+      padding: 14px 24px;
+      font-family: "Poppins", sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition:
+        transform .55s cubic-bezier(.2,.8,.2,1),
+        opacity .4s,
+        filter .4s;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    #yesBtn {
+      color: white;
+      background: linear-gradient(135deg, #ff3f8e, #ff79ad);
+      box-shadow: 0 10px 30px #ff3f8e55;
+    }
+
+    #noBtn {
+      color: #fff;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.2);
+    }
+
+    #noBtn:disabled {
+      opacity: .25;
+      cursor: not-allowed;
+    }
+
+    .success {
+      display: none;
+      animation: fadeIn .9s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .success-title {
+      font-family: "Great Vibes", cursive;
+      font-size: clamp(45px, 12vw, 70px);
+      color: #ff9fc8;
+      margin: 5px 0 15px;
+    }
+
+    .letter {
+      text-align: left;
+      line-height: 1.9;
+      color: #eee;
+      font-size: 14px;
+      padding: 22px;
+      margin-top: 25px;
+      border-radius: 20px;
+      background: rgba(255,255,255,.055);
+      border: 1px solid rgba(255,255,255,.1);
+    }
+
+    .letter p {
+      margin: 0 0 17px;
+    }
+
+    .signature {
+      text-align: right;
+      color: #ff9fc8;
+      font-family: "Great Vibes", cursive;
+      font-size: 30px;
+      margin-top: 25px;
+    }
+
+    .music-box {
+      margin: 25px 0;
+      padding: 18px;
+      border-radius: 20px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.1);
+    }
+
+    .music-status {
+      color: #ffc5dd;
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+
+    #playMusicBtn {
+      display: none;
+      color: white;
+      background: linear-gradient(135deg, #9b5cff, #ff4f9a);
+      box-shadow: 0 8px 25px #9b5cff44;
+    }
+
+    .video-section {
+      margin-top: 30px;
+    }
+
+    .video-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: #ffc5dd;
+      margin-bottom: 15px;
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border-radius: 20px;
+      background: #000;
+      box-shadow: 0 15px 40px rgba(0,0,0,.45);
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .youtube-fallback {
+      margin-top: 14px;
+      color: #aaa;
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    .youtube-link {
+      display: inline-block;
+      margin-top: 8px;
+      color: #ff9fc8;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .youtube-link:hover {
+      text-decoration: underline;
+    }
+
+    .heart-rain {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 20;
+    }
+
+    .falling-heart {
+      position: absolute;
+      top: -60px;
+      animation: fall linear forwards;
+      user-select: none;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(115vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 25px 0;
+      }
+
+      .card {
+        padding: 28px 17px;
+        border-radius: 22px;
+      }
+
+      .question {
+        font-size: 19px;
+      }
+
+      .buttons {
+        gap: 10px;
+      }
+
+      button {
+        padding: 12px 17px;
+        font-size: 13px;
+      }
+
+      .letter {
+        font-size: 13px;
+        padding: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="stars" id="stars"></div>
+  <div class="heart-rain" id="heartRain"></div>
+
+  <div class="container">
+    <div class="card">
+
+      <!-- ========================= -->
+      <!-- BAGIAN PERTANYAAN -->
+      <!-- ========================= -->
+
+      <section id="proposal">
+
+        <div class="heart">❤️</div>
+
+        <h1>Iren</h1>
+
+        <div class="subtitle">
+          Ada sesuatu yang sudah cukup lama ingin aku sampaikan...
+          <br>
+          dan kali ini aku ingin mengatakannya dengan jujur.
+        </div>
+
+        <div class="question">
+          Boleh aku jujur tentang satu hal yang selama ini aku rasakan?
+        </div>
+
+        <div class="small-text" id="smallText">
+          Jawabannya cuma ada dua... tapi aku berharap kamu memilih yang satu itu. 🥺❤️
+        </div>
+
+        <div class="buttons">
+          <button id="yesBtn">
+            Iya, aku mau ❤️
+          </button>
+
+          <button id="noBtn">
+            Tidak 😢
+          </button>
+        </div>
+
+      </section>
+
+
+      <!-- ========================= -->
+      <!-- BAGIAN SETELAH "IYA" -->
+      <!-- ========================= -->
+
+      <section class="success" id="success">
+
+        <div class="heart">💖</div>
+
+        <div class="success-title">
+          Terima kasih, Iren...
+        </div>
+
+        <div class="subtitle">
+          Karena sudah memberi aku kesempatan untuk mengatakan semuanya. ❤️
+        </div>
+
+
+        <!-- MUSIC -->
+
+        <div class="music-box">
+
+          <div class="music-status" id="musicStatus">
+            🎵 Mencoba memutar lagu dari awal...
+          </div>
+
+          <button id="playMusicBtn">
+            ▶ Putar Lagu
+          </button>
+
+          <audio
+            id="music"
+            preload="auto"
+            loop
+            playsinline>
+            <source
+              src="Piche Kota - Bahagia Lagi (Official Lyric Video).mp3"
+              type="audio/mpeg">
+          </audio>
+
+        </div>
+
+
+        <!-- VIDEO YOUTUBE -->
+
+        <div class="video-section">
+
+          <div class="video-title">
+            Ada satu video yang ingin aku persembahkan untuk kamu ❤️
+          </div>
+
+          <div class="video-wrapper">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/YV0Fhjp1ugQ?rel=0"
+              title="Video untuk Iren"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <div class="youtube-fallback">
+            Kalau video tidak dapat diputar langsung di halaman ini,
+            buka melalui YouTube:
+
+            <br>
+
+            <a
+              class="youtube-link"
+              href="https://www.youtube.com/watch?v=YV0Fhjp1ugQ"
+              target="_blank"
+              rel="noopener noreferrer">
+              ▶ Buka di YouTube
+            </a>
+          </div>
+
+        </div>
+
+
+        <!-- SURAT -->
+
+        <div class="letter">
+
+          <p>
+            Iren, mungkin selama ini aku tidak selalu pandai menunjukkan
+            apa yang sebenarnya aku rasakan.
+          </p>
+
+          <p>
+            Tapi ada satu hal yang ingin aku katakan dengan jujur:
+            kehadiran kamu punya arti yang berbeda buat aku.
+          </p>
+
+          <p>
+            Aku suka bagaimana hal-hal sederhana terasa lebih berarti
+            ketika ada kamu di dalamnya. Senyummu, caramu berbicara,
+            dan hal-hal kecil tentang kamu yang mungkin menurutmu biasa,
+            justru bisa tinggal cukup lama di pikiranku.
+          </p>
+
+          <p>
+            Aku tidak ingin memaksamu untuk menjadi apa pun.
+            Aku juga tidak ingin membuatmu merasa harus membalas
+            perasaanku dengan cara tertentu.
+          </p>
+
+          <p>
+            Aku cuma ingin mendapatkan kesempatan untuk mengenal kamu
+            lebih dekat, mendengarkan cerita-ceritamu, menemani
+            hari-harimu, dan mungkin menjadi seseorang yang bisa
+            membuatmu tersenyum ketika harimu sedang tidak baik.
+          </p>
+
+          <p>
+            Kalau suatu hari nanti kita bisa menulis cerita bersama,
+            aku ingin menjalaninya perlahan.
+            Tidak perlu terburu-buru.
+            Yang penting kita sama-sama nyaman dan bahagia.
+          </p>
+
+          <p>
+            Jadi hari ini aku memilih untuk jujur.
+            Aku suka kamu, Iren. ❤️
+          </p>
+
+          <div class="signature">
+            Untuk Iren,<br>
+            dari seseorang yang memilihmu ❤️
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
+  </div>
+
+
+  <script>
+
+    /* ==================================
+       BINTANG
+    ================================== */
+
+    const stars = document.getElementById("stars");
+
+    for (let i = 0; i < 90; i++) {
+
+      const star = document.createElement("div");
+
+      star.className = "star";
+
+      star.style.left = Math.random() * 100 + "%";
+      star.style.top = Math.random() * 100 + "%";
+      star.style.animationDelay = Math.random() * 2 + "s";
+
+      const size = Math.random() * 3 + 1;
+
+      star.style.width = size + "px";
+      star.style.height = size + "px";
+
+      stars.appendChild(star);
+    }
+
+
+    /* ==================================
+       TOMBOL
+    ================================== */
+
+    const yesBtn = document.getElementById("yesBtn");
+    const noBtn = document.getElementById("noBtn");
+    const smallText = document.getElementById("smallText");
+
+    const proposal = document.getElementById("proposal");
+    const success = document.getElementById("success");
+
+    const music = document.getElementById("music");
+    const playMusicBtn = document.getElementById("playMusicBtn");
+    const musicStatus = document.getElementById("musicStatus");
+
+    let attempts = 0;
+
+
+    /* ==================================
+       KALIMAT SAAT "TIDAK"
+    ================================== */
+
+    const messages = [
+
+      "Yakin nih nggak mau? Aku sudah deg-degan dari tadi... 🥺❤️",
+
+      "Serius pilih Tidak? Coba pikir lagi, Iren... aku bisa jadi alasan kamu tersenyum setiap hari. 😭❤️",
+
+      "Hmm... kayaknya jarimu salah pencet deh. Coba pencet Iya kali ini. 😌💕",
+
+      "Iren, masa aku harus merayu sampai segininya? 🥹❤️",
+
+      "Kalau kamu terus pilih Tidak, aku bakal terus mencoba sampai kamu senyum. 😭💗",
+
+      "Kamu yakin banget? Soalnya hatiku masih berharap jawabannya Iya... 🥺",
+
+      "Aku tahu tombol Tidak ada di situ, tapi boleh nggak kalau kamu abaikan saja? 😭❤️",
+
+      "Satu kesempatan lagi... siapa tahu ternyata kita memang cocok. 🫶",
+
+      "Jangan bikin aku patah hati sendirian dong, Iren... 🥹💔",
+
+      "Kalau kamu bilang Iya, aku janji bakal menghargai kesempatan itu. ❤️",
+
+      "Aku masih di sini, masih berharap, dan masih menunggu jawabanmu. 🥺💕",
+
+      "Iren... sebenarnya aku cuma ingin satu hal: kesempatan untuk membuatmu bahagia. ❤️",
+
+      "Masih mau pencet Tidak? Hati-hati, aku makin nggak bisa menyerah. 😭❤️",
+
+      "Kayaknya tombol Iya jauh lebih cantik kalau kamu yang pencet. 😌💗",
+
+      "Kalau bukan sekarang, kapan lagi aku bisa jujur tentang perasaanku? 🥹❤️"
+
+    ];
+
+
+    /* ==================================
+       TOMBOL TIDAK
+       TIDAK MAKIN KECIL
+       IYA MAKIN BESAR
+    ================================== */
+
+    noBtn.addEventListener("click", () => {
+
+      attempts++;
+
+      const noPercent = Math.max(15, 95 - attempts * 10);
+      const yesPercent = 105 + attempts * 10;
+
+      noBtn.style.transform =
+        `scale(${noPercent / 100})`;
+
+      yesBtn.style.transform =
+        `scale(${yesPercent / 100})`;
+
+      const index = Math.min(
+        attempts - 1,
+        messages.length - 1
+      );
+
+      smallText.textContent = messages[index];
+
+
+      if (noPercent <= 15) {
+
+        noBtn.disabled = true;
+        noBtn.style.pointerEvents = "none";
+
+        smallText.textContent =
+          "Oke... tombol Tidak sudah menyerah. Sekarang tinggal Iya, Iren. 🥺❤️";
+      }
+
+    });
+
+
+    /* ==================================
+       COBA AUTOPLAY DARI AWAL
+    ================================== */
+
+    async function tryAutoplay() {
+
+      music.currentTime = 0;
+
+      try {
+
+        await music.play();
+
+        musicStatus.textContent =
+          "🎵 Lagu sedang diputar dari awal ❤️";
+
+        playMusicBtn.style.display = "none";
+
+      } catch (error) {
+
+        musicStatus.textContent =
+          "🎵 Autoplay diblokir browser. Tekan tombol di bawah untuk memutar lagu.";
+
+        playMusicBtn.style.display = "inline-block";
+
+      }
+
+    }
+
+
+    /*
+      Autoplay dicoba ketika halaman selesai dimuat.
+      Browser HP tertentu mungkin tetap memblokir
+      audio yang memiliki suara.
+    */
+
+    window.addEventListener("load", () => {
+
+      setTimeout(() => {
+        tryAutoplay();
+      }, 500);
+
+    });
+
+
+    /* ==================================
+       TOMBOL PUTAR JIKA AUTOPLAY DIBLOKIR
+    ================================== */
+
+    playMusicBtn.addEventListener("click", async () => {
+
+      try {
+
+        music.currentTime = 0;
+
+        await music.play();
+
+        musicStatus.textContent =
+          "🎵 Lagu sedang diputar ❤️";
+
+        playMusicBtn.style.display = "none";
+
+      } catch (error) {
+
+        musicStatus.textContent =
+          "Browser masih memblokir pemutaran lagu.";
+
+      }
+
+    });
+
+
+    /* ==================================
+       TOMBOL "IYA"
+    ================================== */
+
+    yesBtn.addEventListener("click", async () => {
+
+      proposal.style.display = "none";
+
+      success.style.display = "block";
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+
+
+      /* ==============================
+         MUSIK MULAI DARI AWAL
+      ============================== */
+
+      music.currentTime = 0;
+
+      try {
+
+        await music.play();
+
+        musicStatus.textContent =
+          "🎵 Bahagia Lagi sedang diputar ❤️";
+
+        playMusicBtn.style.display = "none";
+
+      } catch (error) {
+
+        musicStatus.textContent =
+          "🎵 Tekan tombol untuk memutar lagu ❤️";
+
+        playMusicBtn.style.display = "inline-block";
+
+      }
+
+
+      /* ==============================
+         HUJAN HATI
+      ============================== */
+
+      startHeartRain();
+
+    });
+
+
+    /* ==================================
+       HUJAN HATI
+    ================================== */
+
+    function startHeartRain() {
+
+      const heartRain =
+        document.getElementById("heartRain");
+
+      const emojis = [
+        "❤️",
+        "💖",
+        "💕",
+        "💗",
+        "💓",
+        "💘",
+        "🥰"
+      ];
+
+      for (let i = 0; i < 80; i++) {
+
+        setTimeout(() => {
+
+          const heart =
+            document.createElement("div");
+
+          heart.className = "falling-heart";
+
+          heart.textContent =
+            emojis[
+              Math.floor(
+                Math.random() * emojis.length
+              )
+            ];
+
+          heart.style.left =
+            Math.random() * 100 + "%";
+
+          heart.style.fontSize =
+            (15 + Math.random() * 25) + "px";
+
+          heart.style.animationDuration =
+            (3 + Math.random() * 5) + "s";
+
+          heart.style.opacity =
+            .5 + Math.random() * .5;
+
+          heartRain.appendChild(heart);
+
+          setTimeout(() => {
+            heart.remove();
+          }, 9000);
+
+        }, i * 80);
+
+      }
+
+    }
+
+  </script>
+
+</body>
+</html>
